@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="ContractePublice.API/ContractePublice.API.csproj" />
+  <Project Path="ContractePublice.Domain/ContractePublice.Domain.csproj" />
+  <Project Path="ContractePublice.Infrastructure/ContractePublice.Infrastructure.csproj" />
+</Solution>
