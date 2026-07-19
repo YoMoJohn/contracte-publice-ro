@@ -51,6 +51,11 @@ public class AppDbContext : DbContext
             e.Property(x => x.County).HasMaxLength(100);
             e.Property(x => x.EstimatedValue).HasPrecision(18, 2);
             e.Property(x => x.AwardedValue).HasPrecision(18, 2);
+            e.Property(x => x.MinValue).HasPrecision(18, 2);
+            e.Property(x => x.MaxValue).HasPrecision(18, 2);
+            e.Property(x => x.ContractNumber).HasMaxLength(100);
+            e.Property(x => x.FundingType).HasMaxLength(200);
+            e.Property(x => x.ReportSource).IsRequired().HasMaxLength(30);
 
             e.HasOne(x => x.ContractingAuthority)
              .WithMany(x => x.Contracts)
@@ -75,7 +80,7 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<DataImportLog>(e =>
         {
             e.HasIndex(x => x.ImportedAt);
-            e.Property(x => x.Source).IsRequired().HasMaxLength(100);
+            e.Property(x => x.Source).IsRequired().HasMaxLength(500);
             e.Property(x => x.Status).IsRequired().HasMaxLength(50);
             e.Property(x => x.Notes).HasMaxLength(2000);
         });

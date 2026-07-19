@@ -20,6 +20,14 @@ public class Contract
     public DateTime? ContractEndDate { get; set; }
     public string County { get; set; } = string.Empty;
 
+    // Populate doar din raportul "Contracte" (mai bogat decât cel de achiziții directe)
+    public string? ContractNumber { get; set; }
+    public decimal? MinValue { get; set; }
+    public decimal? MaxValue { get; set; }
+    public bool? EuFunded { get; set; }
+    public string? FundingType { get; set; }
+    public string ReportSource { get; set; } = "AchizitieDirecta";
+
     public int ContractingAuthorityId { get; set; }
     public ContractingAuthority ContractingAuthority { get; set; } = null!;
 
